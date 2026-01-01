@@ -50,7 +50,7 @@ spotify-playlist-exporter
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/spotify-playlist-exporter.git
+   git clone https://github.com/amur0ray/spotify-playlist-exporter.git
    cd spotify-playlist-exporter
    ```
 

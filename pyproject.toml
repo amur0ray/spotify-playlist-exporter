@@ -39,10 +39,10 @@ dev = [
 spotify-playlist-exporter = "spotify_playlist_exporter.main:main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/spotify-playlist-exporter"
-Documentation = "https://github.com/yourusername/spotify-playlist-exporter#readme"
-Repository = "https://github.com/yourusername/spotify-playlist-exporter.git"
-Issues = "https://github.com/yourusername/spotify-playlist-exporter/issues"
+Homepage = "https://github.com/amur0ray/spotify-playlist-exporter"
+Documentation = "https://github.com/amur0ray/spotify-playlist-exporter#readme"
+Repository = "https://github.com/amur0ray/spotify-playlist-exporter.git"
+Issues = "https://github.com/amur0ray/spotify-playlist-exporter/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
