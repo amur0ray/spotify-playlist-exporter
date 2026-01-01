@@ -9,7 +9,7 @@ description = "Export Spotify playlists to JSON, CSV, and XML formats"
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "Amuro Ray", email = "amuro.ray23@proton.me"}
 ]
 keywords = ["spotify", "playlist", "export", "json", "csv", "xml"]
 classifiers = [
