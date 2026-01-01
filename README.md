@@ -16,24 +16,28 @@ The Spotify Playlist Exporter is a Python application that allows users to expor
 ```
 spotify-playlist-exporter
 ├── src
-│   ├── main.py                    # Entry point with CLI interface
-│   ├── spotify_client.py          # Spotify API client with error handling
-│   ├── exporters                  # Exporter classes for different formats
-│   │   ├── __init__.py
-│   │   ├── base_exporter.py       # Abstract base class (ABC)
-│   │   ├── json_exporter.py       # JSON format exporter
-│   │   ├── csv_exporter.py        # CSV format exporter
-│   │   └── xml_exporter.py        # XML format exporter
-│   └── models                     # Data models
+│   └── spotify_playlist_exporter   # Main package
 │       ├── __init__.py
-│       └── playlist.py            # Playlist and Track classes
-├── tests                          # Unit tests
+│       ├── main.py                 # Entry point with CLI interface
+│       ├── spotify_client.py       # Spotify API client with error handling
+│       ├── exporters               # Exporter classes for different formats
+│       │   ├── __init__.py
+│       │   ├── base_exporter.py    # Abstract base class (ABC)
+│       │   ├── json_exporter.py    # JSON format exporter
+│       │   ├── csv_exporter.py     # CSV format exporter
+│       │   └── xml_exporter.py     # XML format exporter
+│       └── models                  # Data models
+│           ├── __init__.py
+│           └── playlist.py         # Playlist and Track classes
+├── tests                           # Unit tests
 │   ├── __init__.py
-│   ├── test_spotify_client.py     # Tests for SpotifyClient
-│   └── test_exporters.py          # Tests for all exporters
-├── requirements.txt               # Python dependencies
-├── .env.example                   # Example environment configuration
-└── README.md                      # This file
+│   ├── test_spotify_client.py      # Tests for SpotifyClient
+│   └── test_exporters.py           # Tests for all exporters
+├── pyproject.toml                  # Build configuration
+├── setup.py                        # Setup script
+├── requirements.txt                # Python dependencies
+├── .env.example                    # Example environment configuration
+└── README.md                       # This file
 ```
 
 ## Installation
@@ -59,9 +63,9 @@ spotify-playlist-exporter
    source .venv/bin/activate
    ```
 
-3. **Install dependencies:**
+3. **Install the package in development mode:**
    ```bash
-   pip install -r requirements.txt
+   pip install -e .
    ```
 
 4. **Configure Spotify API credentials:**
@@ -79,19 +83,19 @@ spotify-playlist-exporter
 
 ```bash
 # Basic usage - export to JSON (default)
-python -m src.main <playlist_id>
+spotify-playlist-exporter <playlist_id>
 
 # Specify export format
-python -m src.main <playlist_id> -f csv
+spotify-playlist-exporter <playlist_id> -f csv
 
 # Specify output directory
-python -m src.main <playlist_id> -f xml -o ./exports
+spotify-playlist-exporter <playlist_id> -f xml -o ./exports
 
 # Enable verbose logging
-python -m src.main <playlist_id> -v
+spotify-playlist-exporter <playlist_id> -v
 
 # Full example
-python -m src.main 37i9dQZEVXbNG2KDcFcKOF -f csv -o ./exports -v
+spotify-playlist-exporter 37i9dQZEVXbNG2KDcFcKOF -f csv -o ./exports -v
 ```
 
 ### Options
@@ -148,7 +152,7 @@ pytest tests/test_spotify_client.py -v
 
 Run with coverage:
 ```bash
-pytest tests/ --cov=src --cov-report=html
+pytest tests/ --cov=spotify_playlist_exporter --cov-report=html
 ```
 
 ### Test Coverage

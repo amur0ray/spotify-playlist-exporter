@@ -22,21 +22,19 @@ class SpotifyAPIError(Exception):
 class SpotifyClient:
     """Client for interacting with the Spotify API."""
 
-    def __init__(self, client_id: Optional[str] = None, client_secret: Optional[str] = None, 
-                 redirect_uri: Optional[str] = None) -> None:
+    def __init__(self, client_id: Optional[str] = None, client_secret: Optional[str] = None) -> None:
         """Initialize SpotifyClient with credentials.
         
         Args:
             client_id: Spotify API client ID. If None, uses SPOTIFY_CLIENT_ID env var.
             client_secret: Spotify API client secret. If None, uses SPOTIFY_CLIENT_SECRET env var.
-            redirect_uri: OAuth redirect URI. If None, uses SPOTIFY_REDIRECT_URI env var.
+
             
         Raises:
             ValueError: If required credentials are missing.
         """
         self.client_id = client_id or os.getenv("SPOTIFY_CLIENT_ID")
         self.client_secret = client_secret or os.getenv("SPOTIFY_CLIENT_SECRET")
-        self.redirect_uri = redirect_uri or os.getenv("SPOTIFY_REDIRECT_URI")
         
         if not self.client_id or not self.client_secret:
             raise ValueError("Spotify credentials (client_id and client_secret) are required")
